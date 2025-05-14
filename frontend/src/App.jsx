@@ -5,16 +5,22 @@ import './App.css'
 import { CreateTodo } from './components/CreateTodo'
 import { Todos } from './components/Todos'
 
+// useEffect hook
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([]);
+
+  fetch("http://localhost:3000/todos")
+    .then(async function(res) {
+      const json = await res.json();
+      setTodos(json.todos);
+    })
 
   return (
-    <>
-     <CreateTodo></CreateTodo>
-     <Todos></Todos>
-    </>
+    <div>
+      <CreateTodo></CreateTodo>
+      <Todos todos={todos}></Todos>
+    </div>
   )
 }
-
 
 export default App
