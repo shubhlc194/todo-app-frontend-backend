@@ -127,6 +127,8 @@ app.listen(port, () => {
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
-
+app.get("",(req,res)=>{ 
+   res.send("hello to home page");
+})
   
 >>>>>>> 62f18b7b027b39441cfe40a76d618f23538c0d15
