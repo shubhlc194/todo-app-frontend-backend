@@ -130,5 +130,9 @@ app.listen(port, () => {
 app.get("",(req,res)=>{ 
    res.send("hello to home page");
 })
+  app.get("/shubham" (req,res)=>{
+    console.log("shubham server is running");
+    
+  })
   
 >>>>>>> 62f18b7b027b39441cfe40a76d618f23538c0d15
